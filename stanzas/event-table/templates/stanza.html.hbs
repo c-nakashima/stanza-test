@@ -1,1 +1,27 @@
 <p class="greeting">{{greeting}}</p>
+{{!-- <table>
+  <thead>
+    <tr>
+      <td>01</td>
+      <td>02</td>
+      <td>03</td>
+    </tr>
+  </thead>
+</table> --}}
+
+{{#each fields as |field|}}
+  <div>
+    <label>
+      {{field.label}}
+
+      {{#if field.required}}
+        <span class="required">(required)</span>
+      {{/if}}
+    </label>
+
+    <input type="text" />
+  </div>
+{{/each}}
+
+<input type="text" id="name" class="greeting">{{name}}</input>
+<label for="name"></label>
