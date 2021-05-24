@@ -44,5 +44,11 @@
     }
   ],
   "stanza:incomingEvent": [],
-  "stanza:outgoingEvent": []
+  "stanza:outgoingEvent": [
+    {
+        "stanza:key": "valueChanged",
+        "stanza:description": "event used to notify a change of the value. payload is something like {value: 42}"
+    }
+]
+
 }
