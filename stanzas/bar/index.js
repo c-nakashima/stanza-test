@@ -12,6 +12,8 @@ export function handleEvent(stanza, params, event) {
     template: "stanza.html.hbs",
     parameters: {
       name: event.detail.value,
+      category: event.detail.category,
+      count: event.detail.count
     },
   });
 }

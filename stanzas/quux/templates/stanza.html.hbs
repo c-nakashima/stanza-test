@@ -1,9 +1,10 @@
 <p class="greeting">Loading from {{dataUrl}}</p>
 
-<ul>
-  {{#each receivedData as |repo|}}
-  <li>
-    <a href={{repo.html_url}}>{{repo.full_name}}</a>
-  </li>
+<table>
+  {{#each receivedData as |data|}}
+  <tr>
+    <td>{{data.category}}</td>
+    <td>{{data.count}}</td>
+  </tr>
   {{/each}}
-</ul>
+</table>
