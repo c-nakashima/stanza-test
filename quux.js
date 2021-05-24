@@ -81,11 +81,11 @@ var templates = [
         return undefined
     };
 
-  return "  <li>\n    <a href="
-    + alias2(alias1(((stack1 = blockParams[0][0]) != null ? lookupProperty(stack1,"html_url") : stack1), depth0))
-    + ">"
-    + alias2(alias1(((stack1 = blockParams[0][0]) != null ? lookupProperty(stack1,"full_name") : stack1), depth0))
-    + "</a>\n  </li>\n";
+  return "  <tr>\n    <td>"
+    + alias2(alias1(((stack1 = blockParams[0][0]) != null ? lookupProperty(stack1,"category") : stack1), depth0))
+    + "</td>\n    <td>"
+    + alias2(alias1(((stack1 = blockParams[0][0]) != null ? lookupProperty(stack1,"count") : stack1), depth0))
+    + "</td>\n  </tr>\n";
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data,blockParams) {
     var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
@@ -96,9 +96,9 @@ var templates = [
 
   return "<p class=\"greeting\">Loading from "
     + container.escapeExpression(((helper = (helper = lookupProperty(helpers,"dataUrl") || (depth0 != null ? lookupProperty(depth0,"dataUrl") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"dataUrl","hash":{},"data":data,"blockParams":blockParams,"loc":{"start":{"line":1,"column":33},"end":{"line":1,"column":44}}}) : helper)))
-    + "</p>\n\n<ul>\n"
-    + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"receivedData") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 1, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams,"loc":{"start":{"line":4,"column":2},"end":{"line":8,"column":11}}})) != null ? stack1 : "")
-    + "</ul>";
+    + "</p>\n\n<table>\n"
+    + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"receivedData") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 1, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams,"loc":{"start":{"line":4,"column":2},"end":{"line":9,"column":11}}})) != null ? stack1 : "")
+    + "</table>";
 },"useData":true,"useBlockParams":true}]
 ];
 

@@ -77,8 +77,8 @@ async function eventTree(stanza, params) {
     .attr("font-size", "80%")
     .text(function (d) { return d.data.name; });
 
-    stanza.host.dispatchEvent(
-      new CustomEvent("valueChanged", { detail: { value: 42 } })
+  stanza.host.dispatchEvent(
+    new CustomEvent("valueChanged", { detail: { value: 42 } })
   );
 }
 

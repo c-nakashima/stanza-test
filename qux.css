@@ -19,3 +19,7 @@ p.greeting {
   color: var(--greeting-color);
   text-align: var(--greeting-align);
 }
+
+.rect {
+  cursor: pointer;
+}

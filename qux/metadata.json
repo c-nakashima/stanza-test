@@ -18,7 +18,7 @@
     {
       "stanza:key": "data-url",
       "stanza:type": "string",
-      "stanza:example": "https://api.github.com/orgs/togostanza/repos",
+      "stanza:example": "https://sparql-support.dbcls.jp/sparqlist/api/metastanza_chart?chromosome=1",
       "stanza:description": "URL to fetch from",
       "stanza:required": true
     }
@@ -40,5 +40,10 @@
     }
   ],
   "stanza:incomingEvent": [],
-  "stanza:outgoingEvent": []
+  "stanza:outgoingEvent": [
+    {
+        "stanza:key": "clickedData",
+        "stanza:description": "event used to notify a change of the value. payload is something like {value: 42}"
+    }
+  ]
 }
