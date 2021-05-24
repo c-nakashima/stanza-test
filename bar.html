@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bar</title>
+
+    <script type="module" src="./bar.js" async></script>
+
+    <script type="module">
+      import createHelpApp from './-togostanza/help-app.js';
+
+      const metadata = {"@context":{"stanza":"http://togostanza.org/resource/stanza#"},"@id":"bar","stanza:label":"Bar","stanza:definition":"Receive events via handler","stanza:type":"Stanza","stanza:display":"Text","stanza:provider":"","stanza:license":"MIT","stanza:author":"Yoji Shidara","stanza:address":"dara@shidara.net","stanza:contributor":[],"stanza:created":"2021-03-08","stanza:updated":"2021-03-08","stanza:parameter":[{"stanza:key":"say-to","stanza:type":"string","stanza:example":"world","stanza:description":"who to say hello to","stanza:required":false}],"stanza:about-link-placement":"bottom-right","stanza:style":[{"stanza:key":"--greeting-color","stanza:type":"color","stanza:default":"#eb7900","stanza:description":"text color of greeting"},{"stanza:key":"--greeting-align","stanza:type":"single-choice","stanza:choice":["left","center","right"],"stanza:default":"center","stanza:description":"text align of greeting"}],"stanza:incomingEvent":[{"stanza:key":"valueChanged","stanza:description":"value changed event"}],"stanza:outgoingEvent":[]};
+      const readme   = "<h1>Bar</h1>\n<p>Stanza description goes here. Edit <code>stanzas/bar/README.md</code> to update.</p>\n";
+
+      createHelpApp({metadata, readme}).mount('body');
+    </script>
+  </head>
+
+  <body>
+  </body>
+</html>
