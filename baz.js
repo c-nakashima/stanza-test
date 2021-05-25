@@ -95,6 +95,12 @@ var metadata = {
 		"stanza:type": "number",
 		"stanza:default": 400,
 		"stanza:description": "h2 font weight"
+	},
+	{
+		"stanza:key": "--key-color",
+		"stanza:type": "color",
+		"stanza:default": "#eb7900",
+		"stanza:description": "Key color"
 	}
 ],
 	"stanza:incomingEvent": [
@@ -112,9 +118,9 @@ var templates = [
         return undefined
     };
 
-  return "<div class=\"container\">\n  <h1>baz stanza</h1>\n  <div class=\"container\">\n    <h2>Disply input data</h2>\n    <section>\n      <p class=\"greeting\">Hello, "
-    + container.escapeExpression(((helper = (helper = lookupProperty(helpers,"name") || (depth0 != null ? lookupProperty(depth0,"name") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"name","hash":{},"data":data,"loc":{"start":{"line":7,"column":33},"end":{"line":7,"column":41}}}) : helper)))
-    + "! (with attribute)</p>\n    </section>\n  </div>\n</div>";
+  return "<div class=\"container\">\n  <h1>baz stanza</h1>\n  <div class=\"container\">\n    <h2>Disply input data (with attribute)</h2>\n    <section>\n      <p class=\"greeting\">Recieved value is <span class=\"recieved-value\">"
+    + container.escapeExpression(((helper = (helper = lookupProperty(helpers,"name") || (depth0 != null ? lookupProperty(depth0,"name") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"name","hash":{},"data":data,"loc":{"start":{"line":7,"column":73},"end":{"line":7,"column":81}}}) : helper)))
+    + "</span>!</p>\n    </section>\n  </div>\n</div>";
 },"useData":true}]
 ];
 

@@ -108,7 +108,7 @@ var metadata = {
 
 var templates = [
   ["stanza.html.hbs", {"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<h1>foo stanza</h1>\n<div class=\"container\">\n  <h2>Input</h2>\n  <section>\n    <input type=\"text\">\n  </section>\n</div>";
+    return "<div class=\"container\">\n  <h1>foo stanza</h1>\n  <div class=\"container\">\n    <h2>Input</h2>\n    <section>\n      <input type=\"text\">\n    </section>\n  </div>\n</div>";
 },"useData":true}]
 ];
 

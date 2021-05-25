@@ -13,9 +13,51 @@ main {
   padding: 1rem 2rem;
 }
 
-p.greeting {
-  margin: 0;
-  font-size: 24px;
-  color: var(--greeting-color);
-  text-align: var(--greeting-align);
+.container {
+  padding-left: 20px;
+}
+
+p.data-from {
+  height: 65px;
+  padding: 10px;
+  font-size: 10px;
+  background-color: #EEE;
+  overflow: scroll;
+  box-sizing: border-box;
+}
+
+p.data-from a {
+  color: #888;
+  overflow: scroll;
+}
+
+p.data-from a:hover {
+  color: var(--link-hover-font-color);
+}
+
+h1 {
+  font-family: var(--h1-font-family);
+  font-size: var(--h1-font-size);
+  color: var(--h1-font-color);
+  font-weight: var(--h1-font-weight);
+}
+
+h2 {
+  font-family: var(--h2-font-family);
+  font-size: var(--h2-font-size);
+  color: var(--h2-font-color);
+  font-weight: var(--h2-font-weight);
+}
+
+table {
+  border: 1px solid #999;
+}
+table td {
+  padding: 10px;
+  font-size: 10px;
+  border: 1px solid #999;
+  cursor: pointer;
+}
+table td:nth-of-type(2n):hover {
+  color: var(--link-hover-font-color);
 }

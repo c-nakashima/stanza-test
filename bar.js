@@ -107,6 +107,12 @@ var metadata = {
 		"stanza:type": "number",
 		"stanza:default": 400,
 		"stanza:description": "h2 font weight"
+	},
+	{
+		"stanza:key": "--key-color",
+		"stanza:type": "color",
+		"stanza:default": "#eb7900",
+		"stanza:description": "Key color"
 	}
 ],
 	"stanza:incomingEvent": [
@@ -115,8 +121,8 @@ var metadata = {
 		"stanza:description": "value changed event"
 	},
 	{
-		"stanza:key": "clickedData",
-		"stanza:description": "clicked data"
+		"stanza:key": "clickedValue",
+		"stanza:description": "Value clicked event (on table)"
 	}
 ],
 	"stanza:outgoingEvent": [
@@ -125,20 +131,16 @@ var metadata = {
 
 var templates = [
   ["stanza.html.hbs", {"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+    var helper, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
         }
         return undefined
     };
 
-  return "<div class=\"container\">\n  <h1>bar stanza</h1>\n  <div class=\"container\">\n    <h2>Disply input data</h2>\n    <section>\n      <p class=\"greeting\">Hello, "
-    + alias4(((helper = (helper = lookupProperty(helpers,"name") || (depth0 != null ? lookupProperty(depth0,"name") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data,"loc":{"start":{"line":7,"column":33},"end":{"line":7,"column":41}}}) : helper)))
-    + "! (with event)</p>\n      <p>category is "
-    + alias4(((helper = (helper = lookupProperty(helpers,"category") || (depth0 != null ? lookupProperty(depth0,"category") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"category","hash":{},"data":data,"loc":{"start":{"line":8,"column":21},"end":{"line":8,"column":33}}}) : helper)))
-    + ".</p>\n      <p>count is "
-    + alias4(((helper = (helper = lookupProperty(helpers,"count") || (depth0 != null ? lookupProperty(depth0,"count") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"count","hash":{},"data":data,"loc":{"start":{"line":9,"column":18},"end":{"line":9,"column":27}}}) : helper)))
-    + ".</p>\n    </section>\n  </div>\n</div>";
+  return "<div class=\"container\">\n  <h1>bar stanza</h1>\n  <div class=\"container\">\n    <h2>Disply input data (with event)</h2>\n    <section>\n      <p class=\"greeting\">Recieved value is <span class=\"recieved-value\">"
+    + container.escapeExpression(((helper = (helper = lookupProperty(helpers,"name") || (depth0 != null ? lookupProperty(depth0,"name") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"name","hash":{},"data":data,"loc":{"start":{"line":7,"column":73},"end":{"line":7,"column":81}}}) : helper)))
+    + "</span>! </p>\n    </section>\n  </div>\n</div>";
 },"useData":true}]
 ];
 
