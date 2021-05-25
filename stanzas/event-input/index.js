@@ -19,13 +19,18 @@ export default async function eventInput(stanza, params) {
       ]
     }
   });
+
+  const input = stanza.root.querySelector('#input');
+  const changeInputValue = function(){
+    input.setAttribute('value', 'hoge');
+  }
 }
 
 export function handleEvent(stanza, params, event) {
   stanza.render({
     template: "stanza.html.hbs",
     parameters: {
-      name: event.detail.value,
+      clickedData: event.detail.value,
     },
   });
 }

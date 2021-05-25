@@ -2,9 +2,10 @@
   <h1>Event input stanza</h1>
   <div class="container">
     {{!-- <p class="data-from">Loading from<br><a href="{{dataUrl}}"> {{dataUrl}}</a></p> --}}
-    <h2>Input</h2>
+    <h2>Display clicked data (with Enebt)</h2>
     <section>
-      {{#each fields as |field|}}
+      <input id="input" type="text" value="{{clickedData}}">
+      {{!-- {{#each fields as |field|}}
       <div>
         <label>
           {{field.label}}
@@ -14,7 +15,7 @@
         </label>
         <input type="text" />
       </div>
-      {{/each}}
+      {{/each}} --}}
     </section>
   </div>
 </div>
