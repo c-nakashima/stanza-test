@@ -1,10 +1,15 @@
-<p class="greeting">Loading from {{dataUrl}}</p>
-
-<table>
-  {{#each receivedData as |data|}}
-  <tr>
-    <td>{{data.category}}</td>
-    <td>{{data.count}}</td>
-  </tr>
-  {{/each}}
-</table>
+<div class="container">
+  <h1>quux stanza</h1>
+  <p class="data-from">Loading from<a href="{{dataUrl}}"> {{dataUrl}}</a></p>
+  <h2>Table</h2>
+  <section>
+    <table>
+      {{#each receivedData as |data|}}
+      <tr>
+        <td>{{data.category}}</td>
+        <td>{{data.count}}</td>
+      </tr>
+      {{/each}}
+    </table>
+  </section>
+</div>

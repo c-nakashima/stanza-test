@@ -7,13 +7,19 @@ main {
   padding: 1rem 2rem;
 }
 
-p.greeting {
-  margin: 0;
-  font-size: 24px;
-  color: var(--greeting-color);
-  text-align: var(--greeting-align);
+code{
+  background-color :aliceblue;
+  font-size: 12px;
 }
 
 .rect{
   cursor: pointer;
+}
+
+.data-from{
+  font-size: 12px;
+}
+
+section{
+  margin-left: 20px;
 }

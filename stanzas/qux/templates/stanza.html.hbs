@@ -1,4 +1,13 @@
-<div id="chart"></div>
-<hr>
-<p class="greeting">Loading from {{dataUrl}}</p>
-<pre><code>{{receivedData}}</code></pre>
+<div class="container">
+  <h1>qux stanza</h1>
+  <p class="data-from">Loading from <a href="{{dataUrl}}"> {{dataUrl}}</a></p>
+  <section class="code-section">
+    <h2>code</h2>
+    <pre><code>{{receivedData}}</code></pre>
+  </section>
+  <hr>
+  <section>
+    <h2>bar chart</h2>
+    <div id="chart"></div>
+  </section>
+</div>

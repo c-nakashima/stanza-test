@@ -7,9 +7,14 @@ main {
   padding: 1rem 2rem;
 }
 
-p.greeting {
-  margin: 0;
-  font-size: 24px;
-  color: var(--greeting-color);
-  text-align: var(--greeting-align);
+.data-from{
+  font-size: 12px;
+}
+
+section{
+  margin-left: 20px;
+}
+
+table{
+  border: 1px solid #EEE;
 }
