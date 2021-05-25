@@ -16,10 +16,11 @@ main {
 }
 
 p.data-from{
+  height: 65px;
   padding: 10px;
   font-size: 10px;
   background-color: #EEE;
-  border-radius: 2px;
+  overflow: scroll;  
 }
 
 p.data-from a {
