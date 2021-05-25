@@ -81,24 +81,26 @@ var templates = [
         return undefined
     };
 
-  return "  <tr>\n    <td>"
+  return "      <tr>\n        <td>"
     + alias2(alias1(((stack1 = blockParams[0][0]) != null ? lookupProperty(stack1,"category") : stack1), depth0))
-    + "</td>\n    <td>"
+    + "</td>\n        <td>"
     + alias2(alias1(((stack1 = blockParams[0][0]) != null ? lookupProperty(stack1,"count") : stack1), depth0))
-    + "</td>\n  </tr>\n";
+    + "</td>\n      </tr>\n";
 },"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data,blockParams) {
-    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), lookupProperty = container.lookupProperty || function(parent, propertyName) {
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=container.hooks.helperMissing, alias3="function", alias4=container.escapeExpression, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
         }
         return undefined
     };
 
-  return "<p class=\"greeting\">Loading from "
-    + container.escapeExpression(((helper = (helper = lookupProperty(helpers,"dataUrl") || (depth0 != null ? lookupProperty(depth0,"dataUrl") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(alias1,{"name":"dataUrl","hash":{},"data":data,"blockParams":blockParams,"loc":{"start":{"line":1,"column":33},"end":{"line":1,"column":44}}}) : helper)))
-    + "</p>\n\n<table>\n"
-    + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"receivedData") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 1, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams,"loc":{"start":{"line":4,"column":2},"end":{"line":9,"column":11}}})) != null ? stack1 : "")
-    + "</table>";
+  return "<div class=\"container\">\n  <h1>quux stanza</h1>\n  <p class=\"data-from\">Loading from<a href=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"dataUrl") || (depth0 != null ? lookupProperty(depth0,"dataUrl") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"dataUrl","hash":{},"data":data,"blockParams":blockParams,"loc":{"start":{"line":3,"column":44},"end":{"line":3,"column":55}}}) : helper)))
+    + "\"> "
+    + alias4(((helper = (helper = lookupProperty(helpers,"dataUrl") || (depth0 != null ? lookupProperty(depth0,"dataUrl") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"dataUrl","hash":{},"data":data,"blockParams":blockParams,"loc":{"start":{"line":3,"column":58},"end":{"line":3,"column":69}}}) : helper)))
+    + "</a></p>\n  <h2>Table</h2>\n  <section>\n    <table>\n"
+    + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"receivedData") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 1, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams,"loc":{"start":{"line":7,"column":6},"end":{"line":12,"column":15}}})) != null ? stack1 : "")
+    + "    </table>\n  </section>\n</div>";
 },"useData":true,"useBlockParams":true}]
 ];
 

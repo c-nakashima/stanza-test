@@ -151,11 +151,13 @@ var templates = [
         return undefined
     };
 
-  return "<div id=\"chart\"></div>\n<hr>\n<p class=\"greeting\">Loading from "
-    + alias4(((helper = (helper = lookupProperty(helpers,"dataUrl") || (depth0 != null ? lookupProperty(depth0,"dataUrl") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"dataUrl","hash":{},"data":data,"loc":{"start":{"line":3,"column":33},"end":{"line":3,"column":44}}}) : helper)))
-    + "</p>\n<pre><code>"
-    + alias4(((helper = (helper = lookupProperty(helpers,"receivedData") || (depth0 != null ? lookupProperty(depth0,"receivedData") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"receivedData","hash":{},"data":data,"loc":{"start":{"line":4,"column":11},"end":{"line":4,"column":27}}}) : helper)))
-    + "</code></pre>";
+  return "<div class=\"container\">\n  <h1>qux stanza</h1>\n  <p class=\"data-from\">Loading from <a href=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"dataUrl") || (depth0 != null ? lookupProperty(depth0,"dataUrl") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"dataUrl","hash":{},"data":data,"loc":{"start":{"line":3,"column":45},"end":{"line":3,"column":56}}}) : helper)))
+    + "\"> "
+    + alias4(((helper = (helper = lookupProperty(helpers,"dataUrl") || (depth0 != null ? lookupProperty(depth0,"dataUrl") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"dataUrl","hash":{},"data":data,"loc":{"start":{"line":3,"column":59},"end":{"line":3,"column":70}}}) : helper)))
+    + "</a></p>\n  <section class=\"code-section\">\n    <h2>code</h2>\n    <pre><code>"
+    + alias4(((helper = (helper = lookupProperty(helpers,"receivedData") || (depth0 != null ? lookupProperty(depth0,"receivedData") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"receivedData","hash":{},"data":data,"loc":{"start":{"line":6,"column":15},"end":{"line":6,"column":31}}}) : helper)))
+    + "</code></pre>\n  </section>\n  <hr>\n  <section>\n    <h2>bar chart</h2>\n    <div id=\"chart\"></div>\n  </section>\n</div>";
 },"useData":true}]
 ];
 
