@@ -20,7 +20,8 @@ p.data-from{
   padding: 10px;
   font-size: 10px;
   background-color: #EEE;
-  overflow: scroll;  
+  overflow: scroll;
+  box-sizing: border-box;
 }
 
 p.data-from a {
