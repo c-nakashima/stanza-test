@@ -29,7 +29,7 @@ var metadata = {
 	"stanza:definition": "",
 	"stanza:type": "Stanza",
 	"stanza:display": "Text",
-	"stanza:provider": "",
+	"stanza:provider": "Recieve data and show it on a table",
 	"stanza:license": "MIT",
 	"stanza:author": "",
 	"stanza:address": "",
@@ -49,21 +49,58 @@ var metadata = {
 	"stanza:about-link-placement": "bottom-right",
 	"stanza:style": [
 	{
-		"stanza:key": "--greeting-color",
+		"stanza:key": "--link-hover-font-color",
 		"stanza:type": "color",
 		"stanza:default": "#eb7900",
-		"stanza:description": "text color of greeting"
+		"stanza:description": "Link font color when it is hovered"
 	},
 	{
-		"stanza:key": "--greeting-align",
-		"stanza:type": "single-choice",
-		"stanza:choice": [
-			"left",
-			"center",
-			"right"
-		],
-		"stanza:default": "center",
-		"stanza:description": "text align of greeting"
+		"stanza:key": "--h1-font-family",
+		"stanza:type": "string",
+		"stanza:default": "Helvetica",
+		"stanza:description": "h1 font family"
+	},
+	{
+		"stanza:key": "--h1-font-size",
+		"stanza:type": "string",
+		"stanza:default": "20px",
+		"stanza:description": "h1 font size"
+	},
+	{
+		"stanza:key": "--h1-font-color",
+		"stanza:type": "color",
+		"stanza:default": "#eb7900",
+		"stanza:description": "h1 font color"
+	},
+	{
+		"stanza:key": "--h1-font-weight",
+		"stanza:type": "number",
+		"stanza:default": 600,
+		"stanza:description": "h1 font weight"
+	},
+	{
+		"stanza:key": "--h2-font-family",
+		"stanza:type": "string",
+		"stanza:default": "Helvetica",
+		"stanza:description": "h2 font family"
+	},
+	{
+		"stanza:key": "--h2-font-size",
+		"stanza:type": "string",
+		"stanza:default": "16px",
+		"stanza:description": "h2 font size"
+	},
+	{
+		"stanza:key": "--h2-font-color",
+		"stanza:type": "color",
+		"stanza:default": "#eb7900",
+		"stanza:description": "h2 font color"
+	},
+	{
+		"stanza:key": "--h2-font-weight",
+		"stanza:type": "number",
+		"stanza:default": 400,
+		"stanza:description": "h2 font weight"
 	}
 ],
 	"stanza:incomingEvent": [
@@ -94,10 +131,10 @@ var templates = [
         return undefined
     };
 
-  return "<div class=\"container\">\n  <h1>quux stanza</h1>\n  <p class=\"data-from\">Loading from<a href=\""
-    + alias4(((helper = (helper = lookupProperty(helpers,"dataUrl") || (depth0 != null ? lookupProperty(depth0,"dataUrl") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"dataUrl","hash":{},"data":data,"blockParams":blockParams,"loc":{"start":{"line":3,"column":44},"end":{"line":3,"column":55}}}) : helper)))
+  return "<h1>quux stanza</h1>\n<div class=\"container\">\n  <p class=\"data-from\">Loading from<br><a href=\""
+    + alias4(((helper = (helper = lookupProperty(helpers,"dataUrl") || (depth0 != null ? lookupProperty(depth0,"dataUrl") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"dataUrl","hash":{},"data":data,"blockParams":blockParams,"loc":{"start":{"line":3,"column":48},"end":{"line":3,"column":59}}}) : helper)))
     + "\"> "
-    + alias4(((helper = (helper = lookupProperty(helpers,"dataUrl") || (depth0 != null ? lookupProperty(depth0,"dataUrl") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"dataUrl","hash":{},"data":data,"blockParams":blockParams,"loc":{"start":{"line":3,"column":58},"end":{"line":3,"column":69}}}) : helper)))
+    + alias4(((helper = (helper = lookupProperty(helpers,"dataUrl") || (depth0 != null ? lookupProperty(depth0,"dataUrl") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"dataUrl","hash":{},"data":data,"blockParams":blockParams,"loc":{"start":{"line":3,"column":62},"end":{"line":3,"column":73}}}) : helper)))
     + "</a></p>\n  <h2>Table</h2>\n  <section>\n    <table>\n"
     + ((stack1 = lookupProperty(helpers,"each").call(alias1,(depth0 != null ? lookupProperty(depth0,"receivedData") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 1, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams,"loc":{"start":{"line":7,"column":6},"end":{"line":12,"column":15}}})) != null ? stack1 : "")
     + "    </table>\n  </section>\n</div>";

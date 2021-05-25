@@ -13,14 +13,12 @@ main {
   padding: 1rem 2rem;
 }
 
-code {
-  padding: 10px;
-  background-color: aliceblue;
-  font-size: 10px;
-}
-
 .container {
   padding-left: 20px;
+}
+
+.rect {
+  cursor: pointer;
 }
 
 p.data-from {

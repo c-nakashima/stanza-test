@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>D3 Barchart</title>
+
+    <script type="module" src="./d3-barchart.js" async></script>
+
+    <script type="module">
+      import createHelpApp from './-togostanza/help-app.js';
+
+      const metadata = {"@context":{"stanza":"http://togostanza.org/resource/stanza#"},"@id":"d3-barchart","stanza:label":"D3 Barchart","stanza:definition":"Barchart using d3","stanza:type":"Stanza","stanza:display":"Chart","stanza:provider":"","stanza:license":"MIT","stanza:author":"","stanza:address":"","stanza:contributor":[],"stanza:created":"2021-05-25","stanza:updated":"2021-05-25","stanza:parameter":[{"stanza:key":"data-url","stanza:type":"string","stanza:example":"https://sparql-support.dbcls.jp/sparqlist/api/metastanza_chart?chromosome=1","stanza:description":"URL to fetch from","stanza:required":true},{"stanza:key":"category","stanza:type":"string","stanza:example":"category","stanza:description":"Variable to be assigned as category","stanza:required":true},{"stanza:key":"value","stanza:type":"string","stanza:example":"count","stanza:description":"Variable to be assigned as value","stanza:required":true}],"stanza:menu-placement":"bottom-right","stanza:style":[{"stanza:key":"--link-hover-font-color","stanza:type":"color","stanza:default":"#eb7900","stanza:description":"Link font color when it is hovered"},{"stanza:key":"--h1-font-family","stanza:type":"string","stanza:default":"Helvetica","stanza:description":"h1 font family"},{"stanza:key":"--h1-font-size","stanza:type":"string","stanza:default":"20px","stanza:description":"h1 font size"},{"stanza:key":"--h1-font-color","stanza:type":"color","stanza:default":"#eb7900","stanza:description":"h1 font color"},{"stanza:key":"--h1-font-weight","stanza:type":"number","stanza:default":600,"stanza:description":"h1 font weight"},{"stanza:key":"--h2-font-family","stanza:type":"string","stanza:default":"Helvetica","stanza:description":"h2 font family"},{"stanza:key":"--h2-font-size","stanza:type":"string","stanza:default":"16px","stanza:description":"h2 font size"},{"stanza:key":"--h2-font-color","stanza:type":"color","stanza:default":"#eb7900","stanza:description":"h2 font color"},{"stanza:key":"--h2-font-weight","stanza:type":"number","stanza:default":400,"stanza:description":"h2 font weight"}],"stanza:incomingEvent":[],"stanza:outgoingEvent":[{"stanza:key":"clickedData","stanza:description":"event used to notify a change of the value. payload is something like {value: 42}"}]};
+      const readme   = "<h1>D3 Barchart</h1>\n<p>Stanza description goes here. Edit <code>stanzas/d-3-barchart/README.md</code> to update.</p>\n";
+
+      createHelpApp({metadata, readme}).mount('body');
+    </script>
+  </head>
+
+  <body>
+  </body>
+</html>

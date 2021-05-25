@@ -2,18 +2,18 @@
   "@context": {
     "stanza": "http://togostanza.org/resource/stanza#"
   },
-  "@id": "qux",
-  "stanza:label": "Qux",
-  "stanza:definition": "Recieve data and show it as a JSON data",
+  "@id": "d3-barchart",
+  "stanza:label": "D3 Barchart",
+  "stanza:definition": "Barchart using d3",
   "stanza:type": "Stanza",
-  "stanza:display": "Text",
+  "stanza:display": "Chart",
   "stanza:provider": "",
   "stanza:license": "MIT",
   "stanza:author": "",
   "stanza:address": "",
   "stanza:contributor": [],
-  "stanza:created": "2021-05-24",
-  "stanza:updated": "2021-05-24",
+  "stanza:created": "2021-05-25",
+  "stanza:updated": "2021-05-25",
   "stanza:parameter": [
     {
       "stanza:key": "data-url",
@@ -21,9 +21,23 @@
       "stanza:example": "https://sparql-support.dbcls.jp/sparqlist/api/metastanza_chart?chromosome=1",
       "stanza:description": "URL to fetch from",
       "stanza:required": true
+    },
+    {
+      "stanza:key": "category",
+      "stanza:type": "string",
+      "stanza:example": "category",
+      "stanza:description": "Variable to be assigned as category",
+      "stanza:required": true
+    },
+    {
+      "stanza:key": "value",
+      "stanza:type": "string",
+      "stanza:example": "count",
+      "stanza:description": "Variable to be assigned as value",
+      "stanza:required": true
     }
   ],
-  "stanza:about-link-placement": "bottom-right",
+  "stanza:menu-placement": "bottom-right",
   "stanza:style": [
     {
       "stanza:key": "--link-hover-font-color",

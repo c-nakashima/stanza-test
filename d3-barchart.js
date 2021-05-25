@@ -1,12 +1,13 @@
 import { d as defineStanzaElement } from './stanza-element-4b732164.js';
 import 'https://d3js.org/d3.v5.min.js';
 
-async function qux(stanza, params) {
+async function d3Barchart(stanza, params) {
   const dataUrl = params["data-url"];
   if (!dataUrl) {
     return;
   }
-  const receivedData = await fetch(dataUrl).then((res) => res.json());
+  const rawData = await fetch(dataUrl).then((res) => res.json());
+  const receivedData = rawData.filter(Boolean);
 
   stanza.render({
     template: "stanza.html.hbs",
@@ -15,30 +16,93 @@ async function qux(stanza, params) {
       receivedData: JSON.stringify(receivedData.slice(0, 3), null, "  "),
     },
   });
+
+  const width = 400;
+  const height = 300;
+  const padding = 40;
+  const category = params['category'];
+  const value = params['value'];
+
+  // 2.set SVG area
+  const chartElement = stanza.root.querySelector('#chart');
+  const svg = d3.select(chartElement).append("svg").attr("width", width).attr("height", height);
+
+  // 3. set scale
+  const xScale = d3.scaleBand()
+    .rangeRound([padding, width - padding])
+    .padding(0.5)
+    .domain(receivedData.map(function (d) { return d[category]; }));
+  // .domain(receivedData.map(function (d) { 
+  //   console.log('d.count',d.count)
+  //   return d.category; }));
+
+  const yScale = d3.scaleLinear()
+    .domain([0, 2000])
+    // .domain([0, 
+    //   // d3.max(receivedData, function(d) { return d.count; })
+    //   d3.max(receivedData.map(d => d.count))
+    // ])
+    // .domain([0, d3.max(receivedData, function(d) { return d.count; })])
+    .range([height - padding, padding]);
+
+  // 4. set axis
+  svg.append("g")
+    .attr("transform", "translate(" + 0 + "," + (height - padding) + ")")
+    .call(d3.axisBottom(xScale));
+
+  svg.append("g")
+    .attr("transform", "translate(" + padding + "," + 0 + ")")
+    .call(d3.axisLeft(yScale));
+
+  // 5. set rect(bar)
+  svg.append("g")
+    .selectAll("rect")
+    .data(receivedData)
+    .enter()
+    .append("rect")
+    .attr("x", function (d) { return xScale(d[category]); })
+    .attr("y", function (d) { return yScale(d[value]); })
+    .attr("width", xScale.bandwidth())
+    .attr("height", function (d) { return height - padding - yScale(d[value]); })
+    .attr("fill", "lightblue")
+    .attr("class", "rect")
+    .on("click", function () {
+      // access event by [d3.event]
+      d3.event.preventDefault();
+
+      stanza.host.dispatchEvent(
+        new CustomEvent("clickedData", {
+          detail: {
+            "category": function (d) { return d[category] },
+            "count": function (d) { return d[value] }
+          }
+        })
+      );
+    });
 }
 
 var stanzaModule = /*#__PURE__*/Object.freeze({
   __proto__: null,
-  'default': qux
+  'default': d3Barchart
 });
 
 var metadata = {
 	"@context": {
 	stanza: "http://togostanza.org/resource/stanza#"
 },
-	"@id": "qux",
-	"stanza:label": "Qux",
-	"stanza:definition": "Recieve data and show it as a JSON data",
+	"@id": "d3-barchart",
+	"stanza:label": "D3 Barchart",
+	"stanza:definition": "Barchart using d3",
 	"stanza:type": "Stanza",
-	"stanza:display": "Text",
+	"stanza:display": "Chart",
 	"stanza:provider": "",
 	"stanza:license": "MIT",
 	"stanza:author": "",
 	"stanza:address": "",
 	"stanza:contributor": [
 ],
-	"stanza:created": "2021-05-24",
-	"stanza:updated": "2021-05-24",
+	"stanza:created": "2021-05-25",
+	"stanza:updated": "2021-05-25",
 	"stanza:parameter": [
 	{
 		"stanza:key": "data-url",
@@ -46,9 +110,23 @@ var metadata = {
 		"stanza:example": "https://sparql-support.dbcls.jp/sparqlist/api/metastanza_chart?chromosome=1",
 		"stanza:description": "URL to fetch from",
 		"stanza:required": true
+	},
+	{
+		"stanza:key": "category",
+		"stanza:type": "string",
+		"stanza:example": "category",
+		"stanza:description": "Variable to be assigned as category",
+		"stanza:required": true
+	},
+	{
+		"stanza:key": "value",
+		"stanza:type": "string",
+		"stanza:example": "count",
+		"stanza:description": "Variable to be assigned as value",
+		"stanza:required": true
 	}
 ],
-	"stanza:about-link-placement": "bottom-right",
+	"stanza:menu-placement": "bottom-right",
 	"stanza:style": [
 	{
 		"stanza:key": "--link-hover-font-color",
@@ -124,17 +202,15 @@ var templates = [
         return undefined
     };
 
-  return "<h1>qux stanza</h1>\n<div class=\"container\">\n  <p class=\"data-from\">Loading from<br><a href=\""
+  return "<h1>D3 Barchart stanza</h1>\n<div class=\"container\">\n  <p class=\"data-from\">Loading from<br><a href=\""
     + alias4(((helper = (helper = lookupProperty(helpers,"dataUrl") || (depth0 != null ? lookupProperty(depth0,"dataUrl") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"dataUrl","hash":{},"data":data,"loc":{"start":{"line":3,"column":48},"end":{"line":3,"column":59}}}) : helper)))
     + "\"> "
     + alias4(((helper = (helper = lookupProperty(helpers,"dataUrl") || (depth0 != null ? lookupProperty(depth0,"dataUrl") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"dataUrl","hash":{},"data":data,"loc":{"start":{"line":3,"column":62},"end":{"line":3,"column":73}}}) : helper)))
-    + "</a></p>\n  <section class=\"code-section\">\n    <h2>code</h2>\n    <pre><code>"
-    + alias4(((helper = (helper = lookupProperty(helpers,"receivedData") || (depth0 != null ? lookupProperty(depth0,"receivedData") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"receivedData","hash":{},"data":data,"loc":{"start":{"line":6,"column":15},"end":{"line":6,"column":31}}}) : helper)))
-    + "</code></pre>\n  </section>\n</div>";
+    + "</a></p>\n  <section>\n    <h2>bar chart</h2>\n    <div id=\"chart\"></div>\n  </section>\n</div>";
 },"useData":true}]
 ];
 
 const url = import.meta.url.replace(/\?.*$/, '');
 
 defineStanzaElement({stanzaModule, metadata, templates, url});
-//# sourceMappingURL=qux.js.map
+//# sourceMappingURL=d3-barchart.js.map
