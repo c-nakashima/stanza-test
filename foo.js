@@ -42,21 +42,58 @@ var metadata = {
 	"stanza:about-link-placement": "bottom-right",
 	"stanza:style": [
 	{
-		"stanza:key": "--greeting-color",
+		"stanza:key": "--link-hover-font-color",
 		"stanza:type": "color",
 		"stanza:default": "#eb7900",
-		"stanza:description": "text color of greeting"
+		"stanza:description": "Link font color when it is hovered"
 	},
 	{
-		"stanza:key": "--greeting-align",
-		"stanza:type": "single-choice",
-		"stanza:choice": [
-			"left",
-			"center",
-			"right"
-		],
-		"stanza:default": "center",
-		"stanza:description": "text align of greeting"
+		"stanza:key": "--h1-font-family",
+		"stanza:type": "string",
+		"stanza:default": "Helvetica",
+		"stanza:description": "h1 font family"
+	},
+	{
+		"stanza:key": "--h1-font-size",
+		"stanza:type": "string",
+		"stanza:default": "20px",
+		"stanza:description": "h1 font size"
+	},
+	{
+		"stanza:key": "--h1-font-color",
+		"stanza:type": "color",
+		"stanza:default": "#eb7900",
+		"stanza:description": "h1 font color"
+	},
+	{
+		"stanza:key": "--h1-font-weight",
+		"stanza:type": "number",
+		"stanza:default": 600,
+		"stanza:description": "h1 font weight"
+	},
+	{
+		"stanza:key": "--h2-font-family",
+		"stanza:type": "string",
+		"stanza:default": "Helvetica",
+		"stanza:description": "h2 font family"
+	},
+	{
+		"stanza:key": "--h2-font-size",
+		"stanza:type": "string",
+		"stanza:default": "16px",
+		"stanza:description": "h2 font size"
+	},
+	{
+		"stanza:key": "--h2-font-color",
+		"stanza:type": "color",
+		"stanza:default": "#eb7900",
+		"stanza:description": "h2 font color"
+	},
+	{
+		"stanza:key": "--h2-font-weight",
+		"stanza:type": "number",
+		"stanza:default": 400,
+		"stanza:description": "h2 font weight"
 	}
 ],
 	"stanza:incomingEvent": [
@@ -71,7 +108,7 @@ var metadata = {
 
 var templates = [
   ["stanza.html.hbs", {"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<input type=\"text\">";
+    return "<h1>foo stanza</h1>\n<div class=\"container\">\n  <h2>Input</h2>\n  <section>\n    <input type=\"text\">\n  </section>\n</div>";
 },"useData":true}]
 ];
 

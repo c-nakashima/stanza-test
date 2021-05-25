@@ -27,6 +27,7 @@ p.data-from {
   font-size: 10px;
   background-color: #EEE;
   overflow: scroll;
+  box-sizing: border-box;
 }
 
 p.data-from a {

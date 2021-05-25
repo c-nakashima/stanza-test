@@ -55,21 +55,58 @@ var metadata = {
 	"stanza:about-link-placement": "bottom-right",
 	"stanza:style": [
 	{
-		"stanza:key": "--greeting-color",
+		"stanza:key": "--link-hover-font-color",
 		"stanza:type": "color",
 		"stanza:default": "#eb7900",
-		"stanza:description": "text color of greeting"
+		"stanza:description": "Link font color when it is hovered"
 	},
 	{
-		"stanza:key": "--greeting-align",
-		"stanza:type": "single-choice",
-		"stanza:choice": [
-			"left",
-			"center",
-			"right"
-		],
-		"stanza:default": "center",
-		"stanza:description": "text align of greeting"
+		"stanza:key": "--h1-font-family",
+		"stanza:type": "string",
+		"stanza:default": "Helvetica",
+		"stanza:description": "h1 font family"
+	},
+	{
+		"stanza:key": "--h1-font-size",
+		"stanza:type": "string",
+		"stanza:default": "20px",
+		"stanza:description": "h1 font size"
+	},
+	{
+		"stanza:key": "--h1-font-color",
+		"stanza:type": "color",
+		"stanza:default": "#eb7900",
+		"stanza:description": "h1 font color"
+	},
+	{
+		"stanza:key": "--h1-font-weight",
+		"stanza:type": "number",
+		"stanza:default": 600,
+		"stanza:description": "h1 font weight"
+	},
+	{
+		"stanza:key": "--h2-font-family",
+		"stanza:type": "string",
+		"stanza:default": "Helvetica",
+		"stanza:description": "h2 font family"
+	},
+	{
+		"stanza:key": "--h2-font-size",
+		"stanza:type": "string",
+		"stanza:default": "16px",
+		"stanza:description": "h2 font size"
+	},
+	{
+		"stanza:key": "--h2-font-color",
+		"stanza:type": "color",
+		"stanza:default": "#eb7900",
+		"stanza:description": "h2 font color"
+	},
+	{
+		"stanza:key": "--h2-font-weight",
+		"stanza:type": "number",
+		"stanza:default": 400,
+		"stanza:description": "h2 font weight"
 	}
 ],
 	"stanza:incomingEvent": [
@@ -95,13 +132,13 @@ var templates = [
         return undefined
     };
 
-  return "<p class=\"greeting\">Hello, "
-    + alias4(((helper = (helper = lookupProperty(helpers,"name") || (depth0 != null ? lookupProperty(depth0,"name") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data,"loc":{"start":{"line":1,"column":27},"end":{"line":1,"column":35}}}) : helper)))
-    + "! (with event)</p>\n<p>category is "
-    + alias4(((helper = (helper = lookupProperty(helpers,"category") || (depth0 != null ? lookupProperty(depth0,"category") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"category","hash":{},"data":data,"loc":{"start":{"line":2,"column":15},"end":{"line":2,"column":27}}}) : helper)))
-    + ".</p>\n<p>count is "
-    + alias4(((helper = (helper = lookupProperty(helpers,"count") || (depth0 != null ? lookupProperty(depth0,"count") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"count","hash":{},"data":data,"loc":{"start":{"line":3,"column":12},"end":{"line":3,"column":21}}}) : helper)))
-    + ".</p>";
+  return "<div class=\"container\">\n  <h1>bar stanza</h1>\n  <div class=\"container\">\n    <h2>Disply input data</h2>\n    <section>\n      <p class=\"greeting\">Hello, "
+    + alias4(((helper = (helper = lookupProperty(helpers,"name") || (depth0 != null ? lookupProperty(depth0,"name") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"name","hash":{},"data":data,"loc":{"start":{"line":7,"column":33},"end":{"line":7,"column":41}}}) : helper)))
+    + "! (with event)</p>\n      <p>category is "
+    + alias4(((helper = (helper = lookupProperty(helpers,"category") || (depth0 != null ? lookupProperty(depth0,"category") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"category","hash":{},"data":data,"loc":{"start":{"line":8,"column":21},"end":{"line":8,"column":33}}}) : helper)))
+    + ".</p>\n      <p>count is "
+    + alias4(((helper = (helper = lookupProperty(helpers,"count") || (depth0 != null ? lookupProperty(depth0,"count") : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"count","hash":{},"data":data,"loc":{"start":{"line":9,"column":18},"end":{"line":9,"column":27}}}) : helper)))
+    + ".</p>\n    </section>\n  </div>\n</div>";
 },"useData":true}]
 ];
 
