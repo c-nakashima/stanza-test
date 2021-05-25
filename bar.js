@@ -121,7 +121,7 @@ var metadata = {
 		"stanza:description": "value changed event"
 	},
 	{
-		"stanza:key": "clickedValue",
+		"stanza:key": "valueClicked",
 		"stanza:description": "Value clicked event (on table)"
 	}
 ],

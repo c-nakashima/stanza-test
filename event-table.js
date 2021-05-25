@@ -29,9 +29,9 @@ async function eventTable(stanza, params) {
   const values = stanza.root.querySelectorAll('.value');
   for (let i = 0; i < values.length; i++) {
     values[i].addEventListener('click', (e) => {
-      const clickedValue = e.path[0].innerText;
+      const valueClicked = e.path[0].innerText;
       stanza.host.dispatchEvent(
-        new CustomEvent("valueClicked", { detail: { clickedValue } })
+        new CustomEvent("valueClicked", { detail: { valueClicked } })
       );
     });
   }}

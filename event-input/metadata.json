@@ -26,23 +26,69 @@
   "stanza:menu-placement": "bottom-right",
   "stanza:style": [
     {
-      "stanza:key": "--greeting-color",
+      "stanza:key": "--link-hover-font-color",
       "stanza:type": "color",
       "stanza:default": "#eb7900",
-      "stanza:description": "text color of greeting"
+      "stanza:description": "Link font color when it is hovered"
     },
     {
-      "stanza:key": "--greeting-align",
-      "stanza:type": "single-choice",
-      "stanza:choice": [
-        "left",
-        "center",
-        "right"
-      ],
-      "stanza:default": "center",
-      "stanza:description": "text align of greeting"
+      "stanza:key": "--h1-font-family",
+      "stanza:type": "string",
+      "stanza:default": "Helvetica",
+      "stanza:description": "h1 font family"
+    },
+    {
+      "stanza:key": "--h1-font-size",
+      "stanza:type": "string",
+      "stanza:default": "20px",
+      "stanza:description": "h1 font size"
+    },
+    {
+      "stanza:key": "--h1-font-color",
+      "stanza:type": "color",
+      "stanza:default": "#eb7900",
+      "stanza:description": "h1 font color"
+    },
+    {
+      "stanza:key": "--h1-font-weight",
+      "stanza:type": "number",
+      "stanza:default": 600,
+      "stanza:description": "h1 font weight"
+    },
+    {
+      "stanza:key": "--h2-font-family",
+      "stanza:type": "string",
+      "stanza:default": "Helvetica",
+      "stanza:description": "h2 font family"
+    },
+    {
+      "stanza:key": "--h2-font-size",
+      "stanza:type": "string",
+      "stanza:default": "16px",
+      "stanza:description": "h2 font size"
+    },
+    {
+      "stanza:key": "--h2-font-color",
+      "stanza:type": "color",
+      "stanza:default": "#eb7900",
+      "stanza:description": "h2 font color"
+    },
+    {
+      "stanza:key": "--h2-font-weight",
+      "stanza:type": "number",
+      "stanza:default": 400,
+      "stanza:description": "h2 font weight"
     }
   ],
-  "stanza:incomingEvent": [],
+  "stanza:incomingEvent": [
+    {
+      "stanza:key": "valueChanged",
+      "stanza:description": "value changed event"
+    },
+    {
+      "stanza:key": "valueClicked",
+      "stanza:description": "Value clicked event (on table)"
+    }
+  ],
   "stanza:outgoingEvent": []
 }

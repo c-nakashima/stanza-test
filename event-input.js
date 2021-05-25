@@ -21,13 +21,15 @@ async function eventInput(stanza, params) {
       ]
     }
   });
+
+  stanza.root.querySelector('#input');
 }
 
 function handleEvent(stanza, params, event) {
   stanza.render({
     template: "stanza.html.hbs",
     parameters: {
-      name: event.detail.value,
+      clickedData: event.detail.value,
     },
   });
 }
@@ -67,57 +69,87 @@ var metadata = {
 	"stanza:menu-placement": "bottom-right",
 	"stanza:style": [
 	{
-		"stanza:key": "--greeting-color",
+		"stanza:key": "--link-hover-font-color",
 		"stanza:type": "color",
 		"stanza:default": "#eb7900",
-		"stanza:description": "text color of greeting"
+		"stanza:description": "Link font color when it is hovered"
 	},
 	{
-		"stanza:key": "--greeting-align",
-		"stanza:type": "single-choice",
-		"stanza:choice": [
-			"left",
-			"center",
-			"right"
-		],
-		"stanza:default": "center",
-		"stanza:description": "text align of greeting"
+		"stanza:key": "--h1-font-family",
+		"stanza:type": "string",
+		"stanza:default": "Helvetica",
+		"stanza:description": "h1 font family"
+	},
+	{
+		"stanza:key": "--h1-font-size",
+		"stanza:type": "string",
+		"stanza:default": "20px",
+		"stanza:description": "h1 font size"
+	},
+	{
+		"stanza:key": "--h1-font-color",
+		"stanza:type": "color",
+		"stanza:default": "#eb7900",
+		"stanza:description": "h1 font color"
+	},
+	{
+		"stanza:key": "--h1-font-weight",
+		"stanza:type": "number",
+		"stanza:default": 600,
+		"stanza:description": "h1 font weight"
+	},
+	{
+		"stanza:key": "--h2-font-family",
+		"stanza:type": "string",
+		"stanza:default": "Helvetica",
+		"stanza:description": "h2 font family"
+	},
+	{
+		"stanza:key": "--h2-font-size",
+		"stanza:type": "string",
+		"stanza:default": "16px",
+		"stanza:description": "h2 font size"
+	},
+	{
+		"stanza:key": "--h2-font-color",
+		"stanza:type": "color",
+		"stanza:default": "#eb7900",
+		"stanza:description": "h2 font color"
+	},
+	{
+		"stanza:key": "--h2-font-weight",
+		"stanza:type": "number",
+		"stanza:default": 400,
+		"stanza:description": "h2 font weight"
 	}
 ],
 	"stanza:incomingEvent": [
+	{
+		"stanza:key": "valueChanged",
+		"stanza:description": "value changed event"
+	},
+	{
+		"stanza:key": "valueClicked",
+		"stanza:description": "Value clicked event (on table)"
+	}
 ],
 	"stanza:outgoingEvent": [
 ]
 };
 
 var templates = [
-  ["stanza.html.hbs", {"1":function(container,depth0,helpers,partials,data,blockParams) {
-    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
+  ["stanza.html.hbs", {"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper, lookupProperty = container.lookupProperty || function(parent, propertyName) {
         if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
           return parent[propertyName];
         }
         return undefined
     };
 
-  return "      <div>\n        <label>\n          "
-    + container.escapeExpression(container.lambda(((stack1 = blockParams[0][0]) != null ? lookupProperty(stack1,"label") : stack1), depth0))
-    + "\n"
-    + ((stack1 = lookupProperty(helpers,"if").call(depth0 != null ? depth0 : (container.nullContext || {}),((stack1 = blockParams[0][0]) != null ? lookupProperty(stack1,"required") : stack1),{"name":"if","hash":{},"fn":container.program(2, data, 0, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams,"loc":{"start":{"line":11,"column":10},"end":{"line":13,"column":17}}})) != null ? stack1 : "")
-    + "        </label>\n        <input type=\"text\" />\n      </div>\n";
-},"2":function(container,depth0,helpers,partials,data) {
-    return "          <span class=\"required\">(required)</span>\n";
-},"compiler":[8,">= 4.3.0"],"main":function(container,depth0,helpers,partials,data,blockParams) {
-    var stack1, lookupProperty = container.lookupProperty || function(parent, propertyName) {
-        if (Object.prototype.hasOwnProperty.call(parent, propertyName)) {
-          return parent[propertyName];
-        }
-        return undefined
-    };
-
-  return "<div class=\"container\">\n  <h1>Event input stanza</h1>\n  <div class=\"container\">\n    <h2>Input</h2>\n    <section>\n"
-    + ((stack1 = lookupProperty(helpers,"each").call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? lookupProperty(depth0,"fields") : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 1, blockParams),"inverse":container.noop,"data":data,"blockParams":blockParams,"loc":{"start":{"line":7,"column":6},"end":{"line":17,"column":15}}})) != null ? stack1 : "")
-    + "    </section>\n  </div>\n</div>";
-},"useData":true,"useBlockParams":true}]
+  return "<div class=\"container\">\n  <h1>Event input stanza</h1>\n  <div class=\"container\">\n    <h2>Display clicked data (with Enebt)</h2>\n    <section>\n      <input id=\"input\" type=\"text\" value=\""
+    + container.escapeExpression(((helper = (helper = lookupProperty(helpers,"clickedData") || (depth0 != null ? lookupProperty(depth0,"clickedData") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"clickedData","hash":{},"data":data,"loc":{"start":{"line":7,"column":43},"end":{"line":7,"column":58}}}) : helper)))
+    + "\">\n    </section>\n  </div>\n</div>";
+},"useData":true}]
 ];
 
 const url = import.meta.url.replace(/\?.*$/, '');
