@@ -30,7 +30,7 @@ export function handleEvent(stanza, params, event) {
   stanza.render({
     template: "stanza.html.hbs",
     parameters: {
-      clickedData: event.detail.value,
+      clickedData: event.detail.valueClicked,
     },
   });
 }
