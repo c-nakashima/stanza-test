@@ -8,18 +8,41 @@ main {
 }
 
 code{
+  padding: 10px;
   background-color :aliceblue;
-  font-size: 12px;
+  font-size: 10px;
 }
 
-.rect{
-  cursor: pointer;
+.container{
+  padding-left: 20px;
 }
 
-.data-from{
-  font-size: 12px;
+p.data-from{
+  padding: 10px;
+  font-size: 10px;
+  background-color: #EEE;
+  border-radius: 2px;
 }
 
-section{
-  margin-left: 20px;
+p.data-from a {
+  color: #888;
+  overflow: scroll;
+}
+
+p.data-from a:hover{
+  color: var(--link-hover-font-color);
+}
+
+h1{
+  font-family: var(--h1-font-family);
+  font-size: var(--h1-font-size);
+  color: var(--h1-font-color);
+  font-weight: var(--h1-font-weight);
+}
+
+h2{
+  font-family: var(--h2-font-family);
+  font-size: var(--h2-font-size);
+  color: var(--h2-font-color);
+  font-weight: var(--h2-font-weight);
 }
