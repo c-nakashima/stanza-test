@@ -5,20 +5,34 @@ export default async function eventTable(stanza, params) {
     parameters: {
       fields: [
         {
-          label: 'First name',
+          label: 'Name',
+          value: 'Tanaka',
           required: true
         },
         {
-          label: 'Middle name',
+          label: 'Country',
+          value: 'Japane',
           required: false
         },
         {
-          label: 'Last name',
+          label: 'Age',
+          value: '19',
           required: true
         }
       ]
     }
   });
+
+  //get clicked column values
+  const values = stanza.root.querySelectorAll('.value');
+  for (let i = 0; i < values.length; i++) {
+    values[i].addEventListener('click', (e) => {
+      const clickedValue = e.path[0].innerText;
+      stanza.host.dispatchEvent(
+        new CustomEvent("valueClicked", { detail: { clickedValue } })
+      );
+    })
+  };
 }
 
 export function handleEvent(stanza, params, event) {
@@ -29,3 +43,9 @@ export function handleEvent(stanza, params, event) {
     },
   });
 }
+
+// export default async function dispatchValue(stanza, params) {
+//   stanza.host.dispatchEvent(
+//       new CustomEvent("valueChanged", { detail: { value: 42 } })
+//   );
+// }

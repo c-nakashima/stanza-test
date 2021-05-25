@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Event input stanza</h1>
+  <div class="container">
+    {{!-- <p class="data-from">Loading from<br><a href="{{dataUrl}}"> {{dataUrl}}</a></p> --}}
+    <h2>Input</h2>
+    <section>
+      {{#each fields as |field|}}
+      <div>
+        <label>
+          {{field.label}}
+          {{#if field.required}}
+          <span class="required">(required)</span>
+          {{/if}}
+        </label>
+        <input type="text" />
+      </div>
+      {{/each}}
+    </section>
+  </div>
+</div>

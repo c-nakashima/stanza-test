@@ -42,19 +42,3 @@ h2{
   color: var(--h2-font-color);
   font-weight: var(--h2-font-weight);
 }
-
-table{
-  border: 1px solid #999;
-  td{
-    padding: 10px;
-    font-size: 10px;
-    border: 1px solid #999;
-    cursor: pointer;
-    &:nth-of-type(2n){
-      &:hover{
-        color: var(--link-hover-font-color);
-      }
-    }
-  }
-}
-

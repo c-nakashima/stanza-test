@@ -78,6 +78,12 @@
       "stanza:type": "number",
       "stanza:default": 400,
       "stanza:description": "h2 font weight"
+    },
+    {
+      "stanza:key": "--key-color",
+      "stanza:type": "color",
+      "stanza:default": "#eb7900",
+      "stanza:description": "Key color"
     }
   ],
   "stanza:incomingEvent": [],

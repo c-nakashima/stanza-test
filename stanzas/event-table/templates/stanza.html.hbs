@@ -1,27 +1,19 @@
-<p class="greeting">{{greeting}}</p>
-{{!-- <table>
-  <thead>
-    <tr>
-      <td>01</td>
-      <td>02</td>
-      <td>03</td>
-    </tr>
-  </thead>
-</table> --}}
-
-{{#each fields as |field|}}
-  <div>
-    <label>
-      {{field.label}}
-
-      {{#if field.required}}
-        <span class="required">(required)</span>
-      {{/if}}
-    </label>
-
-    <input type="text" />
+<div class="container">
+  <h1>Event table stanza</h1>
+  <div class="container">
+    {{!-- <p class="data-from">Loading from<br><a href="{{dataUrl}}"> {{dataUrl}}</a></p> --}}
+    <h2>Table</h2>
+    <section>
+      <table>
+        <thead>
+          {{#each fields as |field|}}
+          <tr>
+            <td>{{field.label}}</td>
+            <td class="value">{{field.value}}</td>
+          </tr>
+          {{/each}}
+        </thead>
+      </table>
+    </section>
   </div>
-{{/each}}
-
-<input type="text" id="name" class="greeting">{{name}}</input>
-<label for="name"></label>
+</div>
