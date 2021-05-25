@@ -18,10 +18,11 @@ main {
 }
 
 p.data-from {
+  height: 65px;
   padding: 10px;
   font-size: 10px;
   background-color: #EEE;
-  border-radius: 2px;
+  overflow: scroll;
 }
 
 p.data-from a {
@@ -49,4 +50,5 @@ h2 {
 
 table {
   border: 1px solid #EEE;
+  font-size: 10px;
 }
