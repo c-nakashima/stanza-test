@@ -29,7 +29,7 @@ function handleEvent(stanza, params, event) {
   stanza.render({
     template: "stanza.html.hbs",
     parameters: {
-      clickedData: event.detail.value,
+      clickedData: event.detail.valueClicked,
     },
   });
 }
@@ -146,7 +146,7 @@ var templates = [
         return undefined
     };
 
-  return "<div class=\"container\">\n  <h1>Event input stanza</h1>\n  <div class=\"container\">\n    <h2>Display clicked data (with Enebt)</h2>\n    <section>\n      <input id=\"input\" type=\"text\" value=\""
+  return "<div class=\"container\">\n  <h1>Event input stanza</h1>\n  <div class=\"container\">\n    <h2>Display clicked data (with Event)</h2>\n    <section>\n      <input id=\"input\" type=\"text\" value=\""
     + container.escapeExpression(((helper = (helper = lookupProperty(helpers,"clickedData") || (depth0 != null ? lookupProperty(depth0,"clickedData") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"clickedData","hash":{},"data":data,"loc":{"start":{"line":7,"column":43},"end":{"line":7,"column":58}}}) : helper)))
     + "\">\n    </section>\n  </div>\n</div>";
 },"useData":true}]
