@@ -22,7 +22,18 @@ async function eventInput(stanza, params) {
     }
   });
 
-  stanza.root.querySelector('#input');
+  const input = stanza.root.querySelector('#input');
+  //get clicked column values
+  const submitBtn = stanza.root.querySelector('#submitBtn');
+  submitBtn.addEventListener('click', (e) => {
+
+    const valueInput = input.value;
+    stanza.host.dispatchEvent(
+      new CustomEvent("valueInput", { detail: { valueInput } })
+    );
+  });
+
+
 }
 
 function handleEvent(stanza, params, event) {
@@ -146,9 +157,9 @@ var templates = [
         return undefined
     };
 
-  return "<div class=\"container\">\n  <h1>Event input stanza</h1>\n  <div class=\"container\">\n    <h2>Display clicked data (with Event)</h2>\n    <section>\n      <input id=\"input\" type=\"text\" value=\""
+  return "<div class=\"container\">\n  <h1>Event input stanza</h1>\n  <div class=\"container\">\n    <h2>Display clicked data (with event)</h2>\n    <section>\n      <input id=\"input\" type=\"text\" value=\""
     + container.escapeExpression(((helper = (helper = lookupProperty(helpers,"clickedData") || (depth0 != null ? lookupProperty(depth0,"clickedData") : depth0)) != null ? helper : container.hooks.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : (container.nullContext || {}),{"name":"clickedData","hash":{},"data":data,"loc":{"start":{"line":7,"column":43},"end":{"line":7,"column":58}}}) : helper)))
-    + "\">\n    </section>\n  </div>\n</div>";
+    + "\">\n      <input id=\"submitBtn\" type=\"button\" value=\"submit\">\n    </section>\n  </div>\n</div>";
 },"useData":true}]
 ];
 
