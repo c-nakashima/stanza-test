@@ -21,9 +21,17 @@ export default async function eventInput(stanza, params) {
   });
 
   const input = stanza.root.querySelector('#input');
-  const changeInputValue = function(){
-    input.setAttribute('value', 'hoge');
-  }
+  //get clicked column values
+  const submitBtn = stanza.root.querySelector('#submitBtn');
+  submitBtn.addEventListener('click', (e) => {
+
+    const valueInput = input.value;
+    stanza.host.dispatchEvent(
+      new CustomEvent("valueInput", { detail: { valueInput } })
+    );
+  })
+
+
 }
 
 export function handleEvent(stanza, params, event) {
